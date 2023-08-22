@@ -20,6 +20,7 @@ router.get('/projects/:id', cors(),async (req, res)=>{
         const project = await Project.findById(req.params.id)
         res.status(200).send({project: project})
     } catch (error) {
+        throw error;
         res.status(301).send({"err": "Error Occured"})
     }
 })
