@@ -15,7 +15,7 @@ router.get('/projects', cors(),async (req, res)=>{
     }
 })
 
-router.get('/projects/:id', cors(),async (req, res)=>{
+router.get('/project/:id', cors(),async (req, res)=>{
     try {
         const project = await Project.findById(req.params.id)
         res.status(200).send({project: project})
